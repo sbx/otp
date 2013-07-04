@@ -534,6 +534,7 @@ int ei_x_format_wo_ver(ei_x_buff* x, const char *fmt, ...);
 int ei_x_new(ei_x_buff* x);
 int ei_x_new_with_version(ei_x_buff* x);
 int ei_x_free(ei_x_buff* x);
+int ei_x_reserve(ei_x_buff* x, int szneeded);
 int ei_x_append(ei_x_buff* x, const ei_x_buff* x2);
 int ei_x_append_buf(ei_x_buff* x, const char* buf, int len);
 int ei_skip_term(const char* buf, int* index);

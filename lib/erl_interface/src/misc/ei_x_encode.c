@@ -66,6 +66,11 @@ int ei_x_free(ei_x_buff* x)
     return 0;
 }
 
+int ei_x_reserve(ei_x_buff* x, int szneeded)
+{
+    return x_fix_buff(x, szneeded);
+}
+
 int x_fix_buff(ei_x_buff* x, int szneeded)
 {
     int sz = szneeded + ei_x_extra;
