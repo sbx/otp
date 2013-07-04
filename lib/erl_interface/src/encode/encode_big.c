@@ -21,7 +21,6 @@
 #include "eidef.h"
 #include "eiext.h"
 #include "putget.h"
-#include "ei_x_encode.h"
 
 int ei_encode_big(char *buf, int *index, erlang_big* big) {
     unsigned char *s = (unsigned char *)buf + *index;
@@ -77,7 +76,7 @@ int ei_x_encode_big(ei_x_buff* x, erlang_big* big) {
      int i = x->index;
 
      ei_encode_big(NULL, &i, big);
-     if (!x_fix_buff(x, i))
+     if (!ei_x_reserve(x, i))
         return -1;
      return ei_encode_big(x->buff, &x->index, big);
 }

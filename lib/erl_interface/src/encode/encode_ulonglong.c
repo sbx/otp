@@ -19,7 +19,6 @@
 #include "eidef.h"
 #include "eiext.h"
 #include "putget.h"
-#include "ei_x_encode.h"
 
 /*
  * For some 64 bit operations on some operating systems code
@@ -35,7 +34,7 @@ int ei_x_encode_ulonglong(ei_x_buff* x, EI_ULONGLONG n)
 {
     int i = x->index;
     ei_encode_ulonglong(NULL, &i, n);
-    if (!x_fix_buff(x, i))
+    if (!ei_x_reserve(x, i))
 	return -1;
     return ei_encode_ulonglong(x->buff, &x->index, n);
 }

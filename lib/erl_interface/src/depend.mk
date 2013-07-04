@@ -134,10 +134,10 @@ $(ST_OBJDIR)/encode_version.o: encode/encode_version.c misc/eidef.h \
   misc/putget.h
 $(ST_OBJDIR)/encode_longlong.o: encode/encode_longlong.c misc/eidef.h \
   $(TARGET)/config.h ../include/ei.h misc/eiext.h \
-  misc/putget.h misc/ei_x_encode.h
+  misc/putget.h
 $(ST_OBJDIR)/encode_ulonglong.o: encode/encode_ulonglong.c misc/eidef.h \
   $(TARGET)/config.h ../include/ei.h misc/eiext.h \
-  misc/putget.h misc/ei_x_encode.h
+  misc/putget.h
 $(ST_OBJDIR)/epmd_port.o: epmd/epmd_port.c misc/ei_internal.h epmd/ei_epmd.h \
   misc/putget.h
 $(ST_OBJDIR)/epmd_publish.o: epmd/epmd_publish.c misc/eidef.h \
@@ -163,7 +163,7 @@ $(ST_OBJDIR)/ei_pthreads.o: misc/ei_pthreads.c $(TARGET)/config.h \
 $(ST_OBJDIR)/ei_trace.o: misc/ei_trace.c misc/eidef.h $(TARGET)/config.h \
   ../include/ei.h misc/ei_trace.h
 $(ST_OBJDIR)/ei_x_encode.o: misc/ei_x_encode.c misc/eidef.h \
-  $(TARGET)/config.h ../include/ei.h misc/ei_x_encode.h \
+  $(TARGET)/config.h ../include/ei.h \
   misc/ei_malloc.h
 $(ST_OBJDIR)/eimd5.o: misc/eimd5.c misc/eimd5.h
 $(ST_OBJDIR)/get_type.o: misc/get_type.c misc/eidef.h $(TARGET)/config.h \
@@ -235,7 +235,7 @@ $(ST_OBJDIR)/decode_term.o: legacy/decode_term.c misc/eidef.h \
   misc/putget.h ../include/erl_interface.h
 $(ST_OBJDIR)/encode_term.o: legacy/encode_term.c misc/eidef.h \
   $(TARGET)/config.h ../include/ei.h misc/eiext.h \
-  misc/putget.h misc/ei_x_encode.h ../include/erl_interface.h \
+  misc/putget.h ../include/erl_interface.h \
   legacy/erl_marshal.h legacy/erl_eterm.h legacy/portability.h
 $(ST_OBJDIR)/erl_connect.o: legacy/erl_connect.c $(TARGET)/config.h \
   ../include/erl_interface.h ../include/ei.h legacy/erl_config.h \
@@ -417,10 +417,10 @@ $(MT_OBJDIR)/encode_version.o: encode/encode_version.c misc/eidef.h \
   misc/putget.h
 $(MT_OBJDIR)/encode_longlong.o: encode/encode_longlong.c misc/eidef.h \
   $(TARGET)/config.h ../include/ei.h misc/eiext.h \
-  misc/putget.h misc/ei_x_encode.h
+  misc/putget.h
 $(MT_OBJDIR)/encode_ulonglong.o: encode/encode_ulonglong.c misc/eidef.h \
   $(TARGET)/config.h ../include/ei.h misc/eiext.h \
-  misc/putget.h misc/ei_x_encode.h
+  misc/putget.h
 $(MT_OBJDIR)/epmd_port.o: epmd/epmd_port.c misc/ei_internal.h epmd/ei_epmd.h \
   misc/putget.h
 $(MT_OBJDIR)/epmd_publish.o: epmd/epmd_publish.c misc/eidef.h \
@@ -446,7 +446,7 @@ $(MT_OBJDIR)/ei_pthreads.o: misc/ei_pthreads.c $(TARGET)/config.h \
 $(MT_OBJDIR)/ei_trace.o: misc/ei_trace.c misc/eidef.h $(TARGET)/config.h \
   ../include/ei.h misc/ei_trace.h
 $(MT_OBJDIR)/ei_x_encode.o: misc/ei_x_encode.c misc/eidef.h \
-  $(TARGET)/config.h ../include/ei.h misc/ei_x_encode.h \
+  $(TARGET)/config.h ../include/ei.h \
   misc/ei_malloc.h
 $(MT_OBJDIR)/eimd5.o: misc/eimd5.c misc/eimd5.h
 $(MT_OBJDIR)/get_type.o: misc/get_type.c misc/eidef.h $(TARGET)/config.h \
@@ -518,7 +518,7 @@ $(MT_OBJDIR)/decode_term.o: legacy/decode_term.c misc/eidef.h \
   misc/putget.h ../include/erl_interface.h
 $(MT_OBJDIR)/encode_term.o: legacy/encode_term.c misc/eidef.h \
   $(TARGET)/config.h ../include/ei.h misc/eiext.h \
-  misc/putget.h misc/ei_x_encode.h ../include/erl_interface.h \
+  misc/putget.h ../include/erl_interface.h \
   legacy/erl_marshal.h legacy/erl_eterm.h legacy/portability.h
 $(MT_OBJDIR)/erl_connect.o: legacy/erl_connect.c $(TARGET)/config.h \
   ../include/erl_interface.h ../include/ei.h legacy/erl_config.h \
@@ -700,10 +700,10 @@ $(MD_OBJDIR)/encode_version.o: encode/encode_version.c misc/eidef.h \
   misc/putget.h
 $(MD_OBJDIR)/encode_longlong.o: encode/encode_longlong.c misc/eidef.h \
   $(TARGET)/config.h ../include/ei.h misc/eiext.h \
-  misc/putget.h misc/ei_x_encode.h
+  misc/putget.h
 $(MD_OBJDIR)/encode_ulonglong.o: encode/encode_ulonglong.c misc/eidef.h \
   $(TARGET)/config.h ../include/ei.h misc/eiext.h \
-  misc/putget.h misc/ei_x_encode.h
+  misc/putget.h
 $(MD_OBJDIR)/epmd_port.o: epmd/epmd_port.c misc/ei_internal.h epmd/ei_epmd.h \
   misc/putget.h
 $(MD_OBJDIR)/epmd_publish.o: epmd/epmd_publish.c misc/eidef.h \
@@ -729,7 +729,7 @@ $(MD_OBJDIR)/ei_pthreads.o: misc/ei_pthreads.c $(TARGET)/config.h \
 $(MD_OBJDIR)/ei_trace.o: misc/ei_trace.c misc/eidef.h $(TARGET)/config.h \
   ../include/ei.h misc/ei_trace.h
 $(MD_OBJDIR)/ei_x_encode.o: misc/ei_x_encode.c misc/eidef.h \
-  $(TARGET)/config.h ../include/ei.h misc/ei_x_encode.h \
+  $(TARGET)/config.h ../include/ei.h \
   misc/ei_malloc.h
 $(MD_OBJDIR)/eimd5.o: misc/eimd5.c misc/eimd5.h
 $(MD_OBJDIR)/get_type.o: misc/get_type.c misc/eidef.h $(TARGET)/config.h \
@@ -801,7 +801,7 @@ $(MD_OBJDIR)/decode_term.o: legacy/decode_term.c misc/eidef.h \
   misc/putget.h ../include/erl_interface.h
 $(MD_OBJDIR)/encode_term.o: legacy/encode_term.c misc/eidef.h \
   $(TARGET)/config.h ../include/ei.h misc/eiext.h \
-  misc/putget.h misc/ei_x_encode.h ../include/erl_interface.h \
+  misc/putget.h ../include/erl_interface.h \
   legacy/erl_marshal.h legacy/erl_eterm.h legacy/portability.h
 $(MD_OBJDIR)/erl_connect.o: legacy/erl_connect.c $(TARGET)/config.h \
   ../include/erl_interface.h ../include/ei.h legacy/erl_config.h \
@@ -983,10 +983,10 @@ $(MDD_OBJDIR)/encode_version.o: encode/encode_version.c misc/eidef.h \
   misc/putget.h
 $(MDD_OBJDIR)/encode_longlong.o: encode/encode_longlong.c misc/eidef.h \
   $(TARGET)/config.h ../include/ei.h misc/eiext.h \
-  misc/putget.h misc/ei_x_encode.h
+  misc/putget.h
 $(MDD_OBJDIR)/encode_ulonglong.o: encode/encode_ulonglong.c misc/eidef.h \
   $(TARGET)/config.h ../include/ei.h misc/eiext.h \
-  misc/putget.h misc/ei_x_encode.h
+  misc/putget.h
 $(MDD_OBJDIR)/epmd_port.o: epmd/epmd_port.c misc/ei_internal.h epmd/ei_epmd.h \
   misc/putget.h
 $(MDD_OBJDIR)/epmd_publish.o: epmd/epmd_publish.c misc/eidef.h \
@@ -1012,7 +1012,7 @@ $(MDD_OBJDIR)/ei_pthreads.o: misc/ei_pthreads.c $(TARGET)/config.h \
 $(MDD_OBJDIR)/ei_trace.o: misc/ei_trace.c misc/eidef.h $(TARGET)/config.h \
   ../include/ei.h misc/ei_trace.h
 $(MDD_OBJDIR)/ei_x_encode.o: misc/ei_x_encode.c misc/eidef.h \
-  $(TARGET)/config.h ../include/ei.h misc/ei_x_encode.h \
+  $(TARGET)/config.h ../include/ei.h \
   misc/ei_malloc.h
 $(MDD_OBJDIR)/eimd5.o: misc/eimd5.c misc/eimd5.h
 $(MDD_OBJDIR)/get_type.o: misc/get_type.c misc/eidef.h $(TARGET)/config.h \
@@ -1084,7 +1084,7 @@ $(MDD_OBJDIR)/decode_term.o: legacy/decode_term.c misc/eidef.h \
   misc/putget.h ../include/erl_interface.h
 $(MDD_OBJDIR)/encode_term.o: legacy/encode_term.c misc/eidef.h \
   $(TARGET)/config.h ../include/ei.h misc/eiext.h \
-  misc/putget.h misc/ei_x_encode.h ../include/erl_interface.h \
+  misc/putget.h ../include/erl_interface.h \
   legacy/erl_marshal.h legacy/erl_eterm.h legacy/portability.h
 $(MDD_OBJDIR)/erl_connect.o: legacy/erl_connect.c $(TARGET)/config.h \
   ../include/erl_interface.h ../include/ei.h legacy/erl_config.h \

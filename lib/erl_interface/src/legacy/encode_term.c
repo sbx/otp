@@ -19,7 +19,6 @@
 #include "eidef.h"
 #include "eiext.h"
 #include "putget.h"
-#include "ei_x_encode.h"
 #include "erl_interface.h"
 #include "erl_marshal.h"
 
@@ -29,7 +28,7 @@ int ei_x_encode_term(ei_x_buff* x, void* t)
 {
   int i = x->index;
   ei_encode_term(NULL, &i, t);
-  if (!x_fix_buff(x, i))
+  if (!ei_x_reserve(x, i))
     return -1;
   return ei_encode_term(x->buff, &x->index, t);
 }

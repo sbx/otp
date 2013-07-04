@@ -19,7 +19,6 @@
 #include "eidef.h"
 #include "eiext.h"
 #include "putget.h"
-#include "ei_x_encode.h"
 
 #define abs(p) (((p)<0) ? -(p) : p)
 
@@ -40,7 +39,7 @@ int ei_x_encode_longlong(ei_x_buff* x, EI_LONGLONG n)
 {
     int i = x->index;
     ei_encode_longlong(NULL, &i, n);
-    if (!x_fix_buff(x, i))
+    if (!ei_x_reserve(x, i))
 	return -1;
     return ei_encode_longlong(x->buff, &x->index, n);
 }

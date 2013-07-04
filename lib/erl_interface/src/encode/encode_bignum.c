@@ -26,7 +26,6 @@
 #include "eidef.h"
 #include "eiext.h"
 #include "putget.h"
-#include "ei_x_encode.h"
 
 int ei_encode_bignum(char *buf, int *index, mpz_t obj)
 {
@@ -73,7 +72,7 @@ int ei_x_encode_bignum(ei_x_buff* x, mpz_t n)
 {
     int i = x->index;
     ei_encode_bignum(NULL, &i, n);
-    if (!x_fix_buff(x, i))
+    if (!ei_x_reserve(x, i))
 	return -1;
     return ei_encode_bignum(x->buff, &x->index, n);
 }
